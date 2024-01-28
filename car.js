@@ -4,6 +4,7 @@ class Car {
     this.y = y;
     this.width = width;
     this.height = height;
+    this.angle = 0;
 
     this.speed = 0;
     this.acceleration = 0.2;
@@ -33,6 +34,12 @@ class Car {
     }
     if (Math.abs(this.speed) < this.friction) {
       this.speed = 0;
+    }
+    if (this.controls.left) {
+      this.x -= 2;
+    }
+    if (this.controls.right) {
+      this.x += 2;
     }
     this.y -= this.speed;
   }
